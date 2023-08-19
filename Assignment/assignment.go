@@ -37,7 +37,7 @@ func Result(buffer *bytes.Buffer){
     for index, value := range buffer.Bytes() {
         builder.WriteString(fmt.Sprintf("0x%02X", value))
         if index < len(buffer.Bytes())-1 {
-            builder.WriteString(",")
+            builder.WriteString(", ")
         }
     }
     fmt.Println(builder.String())
