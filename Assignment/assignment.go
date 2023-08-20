@@ -10,14 +10,14 @@ import (
 
 // Nas5GSUpdateType represents a data structure for testing purposes.
 type Nas5GSUpdateType  struct {
-    IEI                     uint8                  // Byte 0   // Information Element Identifier
-    Length                  uint8                  // Byte 1   // Length of the encoded data
-    SMS_requested           uint8 `bitfield:"1"`   // Byte 2   // Indicator for SMS request
-    NG_RAN_RCU              uint8 `bitfield:"1"`               // Indicator for NG-RAN RCU
-    GS5_PNB_CIoT            uint8 `bitfield:"2"`               // Indicator for 5GS PNB CIoT
-    EPS_PNB_CIoT            uint8 `bitfield:"2"`               // Indicator for EPS PNB CIoT
-    Spare_1                 uint8 `bitfield:"1"`               // Spare field 1
-    Spare_2                 uint8 `bitfield:"1"`               // Spare field 2
+    IEI                     uint8                  // Byte 0         // Information Element Identifier
+    Length                  uint8                  // Byte 1         // Length of the encoded data
+    SMS_requested           uint8 `bitfield:"1"`   // Byte 2 Start   // Indicator for SMS request
+    NG_RAN_RCU              uint8 `bitfield:"1"`                     // Indicator for NG-RAN RCU
+    GS5_PNB_CIoT            uint8 `bitfield:"2"`                     // Indicator for 5GS PNB CIoT
+    EPS_PNB_CIoT            uint8 `bitfield:"2"`                     // Indicator for EPS PNB CIoT
+    Spare_1                 uint8 `bitfield:"1"`                     // Spare field 1
+    Spare_2                 uint8 `bitfield:"1"`   // Byte 2 End     // Spare field 2
 }
 // A function that converts any Nas5GSUpdateType object into a byte stream.
 func (ie Nas5GSUpdateType) Encode(buffer *bytes.Buffer){

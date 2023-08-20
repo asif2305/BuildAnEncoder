@@ -3,6 +3,8 @@ package main
 import (
 	"bytes"
 	"testing"
+
+	"github.com/stretchr/testify/assert"
 )
 
 
@@ -27,16 +29,5 @@ func TestNas5GSUpdateType_Encode(t *testing.T) {
 
 	// Get the actual encoded bytes from the buffer
 	actualBytes := buffer.Bytes()
-
-    // Compare the lengths of expected and actual encoded bytes
-	if len(expectedBytes) != len(actualBytes) {
-		t.Errorf("Expected byte length %d, but got %d", len(expectedBytes), len(actualBytes))
-		return
-	}
-    // Compare each byte in the expected and actual encoded bytes
-	for i, expected := range expectedBytes {
-		if expected != actualBytes[i] {
-			t.Errorf("Byte at index %d mismatch, expected: 0x%02X, actual: 0x%02X", i, expected, actualBytes[i])
-		}
-	}
+	assert.Equal(t,expectedBytes,actualBytes,"Expected Result {0x01, 0x02, 0x03}")
 }
