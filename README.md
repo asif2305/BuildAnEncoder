@@ -1,2 +1,4 @@
 # BuildAnEncoder
-Build an encoder that encodes the content of a defined structure into a byte stream (network-byte-order)
+Comprehensive documentation can be found at the following link:
+
+https://github.com/asif2305/BuildAnEncoder/blob/main/Task%20Documentation.pdf
