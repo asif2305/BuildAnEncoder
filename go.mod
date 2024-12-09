@@ -1,4 +1,4 @@
-module Assignment
+module BuildAnEncoder
 
 go 1.20
 
